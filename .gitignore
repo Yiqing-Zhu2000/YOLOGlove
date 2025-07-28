@@ -10,5 +10,8 @@ __pycache__/
 # Ignore Glove model
 *.zip
 glove.42B.300d.txt
-
 *.pt
+
+# dataset
+__MACOSX/
+images/

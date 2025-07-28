@@ -8,3 +8,20 @@
 #SBATCH --mail-user=yiqing.zhu2@mail.mcgill.ca
 #SBATCH --mail-type=BEGIN,END,FAIL
 
+module load python/3.10  # Make sure to choose a version that suits your application
+# remember to use the last zip file
+cp ~/projects/rrg-skrishna/yzhu439/YOLOGlove/Tmp.zip $SLURM_TMPDIR
+unzip $SLURM_TMPDIR/Tmp.zip -d $SLURM_TMPDIR/
+
+# env_requirements.txt has tested from test4.sh and then get this, in logic this txt would work 
+virtualenv --no-download $SLURM_TMPDIR/env
+source $SLURM_TMPDIR/env/bin/activate
+pip install --no-index --upgrade pip
+pip install --no-index torch torchvision
+pip install --no-index -r $SLURM_TMPDIR/requirements_clean.txt
+
+# change current layer to Tmp
+cd $SLURM_TMPDIR
+python Set_18thresholds.py
+# copy the output_model store back to my local place 
+cp -r output ~/projects/rrg-skrishna/yzhu439/YOLOGlove/

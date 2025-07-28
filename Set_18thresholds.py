@@ -19,7 +19,7 @@ import csv
 
 
 # Paths
-COCO_img_dir = "D:/019_2025summer/Datasets/COCOSearch18-images-TP/images/"
+COCO_img_dir = "./images/"
 json_path = "new_jsonFile/coco18_train_split1_deduplicated_task_name_bbox.json"
 glove_path = "glove6B/glove.6B.300d.word2vec.txt"
 output_dir = "output/"
@@ -39,7 +39,7 @@ task_to_items = group_by_task(deduplicated_data)
 thresholds_result = {}
 for task, items in task_to_items.items():
 
-    items = items[:3]  # ← only use the first 3 samples of each category JUST for local test
+    # items = items[:3]  # ← only use the first 3 samples of each category JUST for local test
     
     # for this task, collect singal vs noise sims.
     signal_sims, noise_sims = [], []
