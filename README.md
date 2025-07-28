@@ -30,7 +30,17 @@ zip -r Tmp.zip glove6B new_jsonFile yolov8x.pt COCOSearch18-images-TP.zip src re
 chmod 600 set_18thresholds.sh
 sbatch set_18thresholds.sh
 ```
-3. Check the 
+3. After using the training image datasets to get suitable threshold for each category, use a new image as input to check whether it can detect whether the target is existing in this image. 
 
 ## Use the threshold to check whether input image contain the target category. 
+- Use ComputeCanada to run `YOLOGlove_SDT.py` check file. 
+1. zip the necessary data, models, and codes in this way
+```
+zip -r Tmp.zip glove6B yolov8x.pt COCOSearch18-images-TP.zip src output requirements.txt YOLOGlove_SDT.py
+```
 
+2. For the `YOLOGlove_SDT.sh` file, I run my `YOLOGlove_SDT.py`, print the results. 
+```
+chmod 600 YOLOGlove_SDT.sh
+sbatch YOLOGlove_SDT.sh
+```

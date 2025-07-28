@@ -4,11 +4,11 @@
 #SBATCH --cpus-per-task=4  # Cores proportional to GPUs: 6 on Cedar, 16 on Graham.
 #SBATCH --mem=16000M       # Memory proportional to GPUs: 32000 Cedar, 64000 Graham.
 #SBATCH --time=0-00:30
-#SBATCH --output=set_18thred-%j.out
+#SBATCH --output=OneImage_SDT-%j.out
 #SBATCH --mail-user=yiqing.zhu2@mail.mcgill.ca
 #SBATCH --mail-type=BEGIN,END,FAIL
 
-# mem maybe 64000M for total compute 
+# mem maybe 64000M for total compute (no need)
 module purge
 module load StdEnv/2020
 module load gcc/9.3.0
@@ -30,6 +30,6 @@ pip install --no-index -r $SLURM_TMPDIR/requirements.txt
 # change current layer to $SLURM_TMPDIR
 cd $SLURM_TMPDIR
 unzip $SLURM_TMPDIR/COCOSearch18-images-TP.zip -d $SLURM_TMPDIR/
-python Set_18thresholds.py
+python YOLOGlove_SDT.py
 # copy the output_model store back to my local place 
-cp -r output ~/projects/rrg-skrishna/yzhu439/YOLOGlove/
+# cp -r output ~/projects/rrg-skrishna/yzhu439/YOLOGlove/

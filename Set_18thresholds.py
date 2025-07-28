@@ -17,6 +17,7 @@ from sklearn.metrics import roc_curve
 import pandas as pd
 import csv
 
+print("Start to run Set_18thresholds.py")
 
 # Paths
 COCO_img_dir = "images/"

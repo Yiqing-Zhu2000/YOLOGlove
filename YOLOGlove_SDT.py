@@ -12,7 +12,7 @@ import json
 from src.YOLO_utils import * 
 
 # Paths
-COCO_img_dir = "D:/019_2025summer/Datasets/COCOSearch18-images-TP/images/"
+COCO_img_dir = "images/"
 glove_path = "glove6B/glove.6B.300d.word2vec.txt"
 thresholds_path = "output/category_thresholds.csv"
 
@@ -65,7 +65,7 @@ YOLO_labels = [names[i] for i in YOLOclass_ids]   # change index -> text labels
 YOLO_labels_unique = list(set(YOLO_labels))     # unique labels. 
 print("labels unique", YOLO_labels_unique)
 
-# =============== get similarities of labels vs. target word, For ONE image =========
+# =============== get similarities of yolo labels vs. target word, For ONE image =========
 labels_sims = labels_vs_target_similarity_glove(glove_model, YOLO_labels_unique, target_word)
 # find the index that sim >= threshold, and store idx in list
 
