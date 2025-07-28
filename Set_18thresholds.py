@@ -19,7 +19,7 @@ import csv
 
 
 # Paths
-COCO_img_dir = "./images/"
+COCO_img_dir = "images/"
 json_path = "new_jsonFile/coco18_train_split1_deduplicated_task_name_bbox.json"
 glove_path = "glove6B/glove.6B.300d.word2vec.txt"
 output_dir = "output/"

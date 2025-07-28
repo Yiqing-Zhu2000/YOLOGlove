@@ -30,6 +30,7 @@ zip -r Tmp.zip glove6B new_jsonFile yolov8x.pt COCOSearch18-images-TP.zip src re
 chmod 600 set_18thresholds.sh
 sbatch set_18thresholds.sh
 ```
+3. Check the 
 
 ## Use the threshold to check whether input image contain the target category. 
 

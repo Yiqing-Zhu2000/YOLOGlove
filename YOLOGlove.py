@@ -1,5 +1,6 @@
 # This is for primary test no need to use 
 # this file haven't use functions to change. 
+# Don't need to use this. Besides, this file hasn't change follow src functions.
 import os
 from ultralytics import YOLO
 from PIL import Image, ImageDraw, ImageFont
