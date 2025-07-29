@@ -1,6 +1,5 @@
 ###
 glove6B/*
-output/*
 yoloOutput/*
 
 # Ignore Python bytecode
