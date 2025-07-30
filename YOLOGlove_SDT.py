@@ -67,8 +67,8 @@ print("labels unique", YOLO_labels_unique)
 
 # =============== get similarities of yolo labels vs. target word, For ONE image =========
 labels_sims = labels_vs_target_similarity_glove(glove_model, YOLO_labels_unique, target_word)
-# find the index that sim >= threshold, and store idx in list
 
+# find the index that sim >= threshold, and store idx in list
 overThred_idx = [i for i, val in enumerate(labels_sims) if val >= threshold]
 # ======= output result ======
 print("\n=== Final Judgment ===")
